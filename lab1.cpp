@@ -33,6 +33,7 @@ vector<string> splitting(string input){
     return data;
 }
 
+//Исправить длину этой функции
 income assign(vector<string> input) {
     income out;
     bool f_quo = 0;
