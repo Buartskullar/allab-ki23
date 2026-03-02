@@ -36,7 +36,7 @@ QList<QString> splitting(QString input){
     return data;
 }
 
-incops::income incops::assign(const QList<QString> &input) {
+incops::income incops::assign(QList<QString> input) {
     incops::income out;
     bool f_quo = false;
 
@@ -78,4 +78,10 @@ incops::income incops::assign(const QList<QString> &input) {
         }
     }
     return out;
+}
+
+incops::income incops::transformToIncome(QString input){
+    incops::income output;
+    output = assign(splitting(input));
+    return output;
 }
