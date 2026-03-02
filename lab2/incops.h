@@ -7,12 +7,6 @@ class incops
 public:
     incops();
 
-    QString getName();
-    QString getDay();
-    QString getPlace();
-    int getSum();
-
-private:
     struct income
     {
         QString name;
@@ -21,9 +15,18 @@ private:
         int sum;
     };
 
+    QString getName();
+    QString getDay();
+    QString getPlace();
+    int getSum();
+
+    income transformToIncome(QString input);
+
+
+private:
     income income_obj;
     QList<QString> splitting(QString input);
-    income assign(const QList<QString> &input);
+    income assign(QList<QString> input);
 };
 
 #endif // INCOPS_H
