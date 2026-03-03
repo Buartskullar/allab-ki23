@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QTextStream>
+#include "incomelist.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +22,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    incomeList *income_l;
+    void loadData();
 };
 #endif // MAINWINDOW_H
