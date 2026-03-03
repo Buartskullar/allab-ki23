@@ -14,14 +14,12 @@ QVariant incomeList::data(const QModelIndex &index, int role) const {
     const incops::income &obj = m_data.at(index.row());
 
     if (role == Qt::DisplayRole) {
-        return obj.name; // Что именно будет текстом в списке
+        return obj.name;
     }
-    // Можно добавить другие роли, например ToolTipRole
     return QVariant();
 }
 
 void incomeList::addObject(const incops::income &obj) {
-    // Сообщаем модели, что сейчас добавится новая строка
     beginInsertRows(QModelIndex(), m_data.count(), m_data.count());
     m_data.append(obj);
     endInsertRows();
