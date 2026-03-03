@@ -18,7 +18,7 @@ int incops::getSum(){
     return income_obj.sum;
 }
 
-QList<QString> splitting(QString input){
+QList<QString> incops::splitting(QString input){
     // 1. Сначала отделяем часть до первого двоеточия
     int firstColon = input.indexOf(':');
     if (firstColon == -1) return {}; // Или обработка ошибки
@@ -80,8 +80,6 @@ incops::income incops::assign(QList<QString> input) {
     return out;
 }
 
-incops::income incops::transformToIncome(QString input){
-    incops::income output;
-    output = assign(splitting(input));
-    return output;
+incops::income incops::transformToIncome(const QString input){
+    return assign(splitting(input));
 }

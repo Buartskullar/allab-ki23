@@ -20,13 +20,13 @@ public:
     QString getPlace();
     int getSum();
 
-    income transformToIncome(QString input);
+    static income transformToIncome(const QString input);
 
 
 private:
     income income_obj;
-    QList<QString> splitting(QString input);
-    income assign(QList<QString> input);
+    static QList<QString> splitting(QString input);
+    static income assign(QList<QString> input);
 };
 
 #endif // INCOPS_H
