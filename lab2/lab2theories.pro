@@ -9,14 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    income.cpp \
     incomelist.cpp \
-    incops.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    income.h \
     incomelist.h \
-    incops.h \
     mainwindow.h
 
 FORMS += \
