@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFile>
 #include <QTextStream>
 #include "incomelist.h"
 
@@ -20,9 +19,23 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void onListClicked(const QModelIndex &index);
+    void updateName(const QString &name);
+    void updateDay(const QString &day);
+    void updatePlace(const QString &place);
+    void updateSum(const QString &sum);
+
+
+    void on_buttonAdd_clicked();
+    void on_buttonSub_clicked();
+
 private:
     Ui::MainWindow *ui;
     incomeList *income_l;
-    void loadData();
+    QModelIndex currentIndex;
+
+
+
 };
 #endif // MAINWINDOW_H
