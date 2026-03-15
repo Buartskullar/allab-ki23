@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->mainList, &QListView::clicked, this, &::MainWindow::onListClicked);
 
-    ui->lineSum->setValidator(new QIntValidator(0, 100000000, this));
+    ui->lineSum->setValidator(new QIntValidator(-100000000, 100000000, this));
     ui->lineDay->setInputMask("99.99.9999;_");
     ui->linePlace->setValidator(new QRegularExpressionValidator(QRegularExpression("[^\":]*"), this));
 

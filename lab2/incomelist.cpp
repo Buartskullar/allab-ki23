@@ -82,7 +82,7 @@ void incomeList::loadFromFile(){
     QTextStream in(&file);
     in.setEncoding(QStringConverter::Utf8);
 
-    static QRegularExpression re("^(.*):(\\d{2}\\.\\d{2}\\.\\d{4})\\s+\"(.*)\"\\s+(\\d+)$");
+    static QRegularExpression re("^(.*):(\\d{2}\\.\\d{2}\\.\\d{4})\\s+\"(.*)\"\\s+(-?\\d+)$");
 
     while (!in.atEnd()) {
         QString line = in.readLine();
@@ -110,7 +110,6 @@ void incomeList::saveToFile() {
     }
 
     QTextStream out(&file);
-    // Устанавливаем кодировку, если в названиях есть кириллица
     out.setEncoding(QStringConverter::Utf8);
 
     for (const income &item : m_data) {
