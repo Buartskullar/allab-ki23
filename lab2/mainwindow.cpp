@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     income_l = new incomeList(this);
+    this->hide();
     ui->mainList->setModel(income_l);
     income_l->loadFromFile();
 
@@ -78,5 +79,12 @@ void MainWindow::on_buttonSub_clicked()
 {
     income_l->removeObject(currentIndex);
     currentIndex = QModelIndex();
+}
+
+
+void MainWindow::on_buttonBack_clicked()
+{
+    emit backClicked();
+    this->hide();
 }
 
