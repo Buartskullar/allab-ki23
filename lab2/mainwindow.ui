@@ -70,7 +70,7 @@
       <x>410</x>
       <y>52</y>
       <width>381</width>
-      <height>141</height>
+      <height>143</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -196,7 +196,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -221,6 +221,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="buttonBack">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>10</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Назад</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

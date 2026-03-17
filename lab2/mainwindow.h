@@ -30,12 +30,15 @@ private slots:
     void on_buttonAdd_clicked();
     void on_buttonSub_clicked();
 
+    void on_buttonBack_clicked();
+
 private:
     Ui::MainWindow *ui;
     incomeList *income_l;
     QModelIndex currentIndex;
 
-
+signals:
+    void backClicked();
 
 };
 #endif // MAINWINDOW_H
