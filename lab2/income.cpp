@@ -55,6 +55,8 @@ QList<QString> income::splitting(QString input){
     return data;
 }
 
+//тупое изменение для обмана гита
+
 income income::assign(QList<QString> input) {
     income out;
     bool f_quo = false;
