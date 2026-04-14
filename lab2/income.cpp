@@ -1,10 +1,10 @@
 #include "income.h"
 
 income::income() {
-    source_day = "not_def";
-    source_place = "not_def";
+    source_day = "NDEF";
+    source_place = "NDEF";
     source_sum = 0;
-    source_name = "empty";
+    source_name = "NDEF";
 }
 
 QString income::getName() const   {

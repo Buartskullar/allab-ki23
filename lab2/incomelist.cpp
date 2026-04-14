@@ -29,7 +29,7 @@ void incomeList::removeObject(const QModelIndex &index) {
     if (!index.isValid()) return;
 
     int row = index.row();
-    if (row < 0 || row >= m_data.count()) return; // Вторая линия обороны
+    if (row < 0 || row >= m_data.count()) return;
 
     beginRemoveRows(QModelIndex(), index.row(), index.row());
     m_data.removeAt(index.row());
@@ -47,11 +47,11 @@ bool incomeList::setData(const QModelIndex &index, const QVariant &value, int ro
     if (!index.isValid() || index.row() >= m_data.size())
         return false;
 
-    income &item = m_data[index.row()]; // Берем ссылку на объект
+    income &item = m_data[index.row()];
 
     switch (role) {
     case NameRole:
-    case Qt::EditRole: // Обычно EditRole дублирует главное поле
+    case Qt::EditRole:
         item.setName(value.toString());
         break;
     case DayRole:
@@ -67,7 +67,6 @@ bool incomeList::setData(const QModelIndex &index, const QVariant &value, int ro
         return false;
     }
 
-    // Уведомляем систему, что данные изменились
     emit dataChanged(index, index, {role});
     return true;
 }
@@ -82,6 +81,7 @@ void incomeList::loadFromFile(){
     QTextStream in(&file);
     in.setEncoding(QStringConverter::Utf8);
 
+    //выделить в отдельную функцию для написания модульных тестов
     static QRegularExpression re("^(.*):(\\d{2}\\.\\d{2}\\.\\d{4})\\s+\"(.*)\"\\s+(-?\\d+)$");
 
     while (!in.atEnd()) {
@@ -100,7 +100,7 @@ void incomeList::loadFromFile(){
     }
 
     file.close();
-    endResetModel(); // Уведомляем View, что модель полностью обновилась
+    endResetModel();
 }
 
 void incomeList::saveToFile() {

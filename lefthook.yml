@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    build-and-test:
+      run: cmake --build build --target tst_incometest && C:/CODE/build-incomeTester-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/debug/tst_incometest.exe
+      glob: "*.cpp *.h *.pro *.cmake"
