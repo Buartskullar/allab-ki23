@@ -4,6 +4,8 @@
 #include <QFile>
 #include "income.h"
 
+//Амогуы
+
 class fileworks
 {
 private:
