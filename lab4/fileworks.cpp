@@ -5,7 +5,7 @@ fileworks::fileworks() {
 }
 
 bool fileworks::isFileOk(){
-    QFile file("C:/CODE/OSNOV/lab2/data.txt");
+    QFile file("C:/CODE/OSNOV/lab4/data.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return false;
     file.close();
     return true;
@@ -13,7 +13,7 @@ bool fileworks::isFileOk(){
 
 QList<income> fileworks::loadFromFile(){
     QList<income> m_data;
-    QFile file("C:/CODE/OSNOV/lab2/data.txt");
+    QFile file("C:/CODE/OSNOV/lab4/data.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return m_data;
 
     QTextStream in(&file);
@@ -41,7 +41,7 @@ QList<income> fileworks::loadFromFile(){
 }
 
 void fileworks::saveToFile(QList<income> m_data) {
-    QFile file("C:/CODE/OSNOV/lab2/data.txt");
+    QFile file("C:/CODE/OSNOV/lab4/data.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         return;
     }
@@ -59,7 +59,7 @@ void fileworks::saveToFile(QList<income> m_data) {
 }
 
 void fileworks::saveToFile(QList<income> m_data, QString filename){
-    QString fullpath = "C:/CODE/OSNOV/lab2/" + filename;
+    QString fullpath = "C:/CODE/OSNOV/lab4/" + filename;
     QFile file(fullpath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         return;
@@ -78,7 +78,7 @@ void fileworks::saveToFile(QList<income> m_data, QString filename){
 }
 
 int fileworks::comCount(){
-    QFile file("C:/CODE/OSNOV/lab2/coms.txt");
+    QFile file("C:/CODE/OSNOV/lab4/coms.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return 0;
     }
@@ -97,7 +97,7 @@ int fileworks::comCount(){
 }
 
 QString fileworks::getCommand(int line){
-    QFile file("C:/CODE/OSNOV/lab2/coms.txt");
+    QFile file("C:/CODE/OSNOV/lab4/coms.txt");
     if (!file.isOpen()){
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             return 0;
