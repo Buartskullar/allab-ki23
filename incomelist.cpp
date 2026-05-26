@@ -72,7 +72,7 @@ bool incomeList::setData(const QModelIndex &index, const QVariant &value, int ro
 }
 
 void incomeList::loadFromFile(){
-    QFile file("C:/CODE/OSNOV/lab2/data.txt");
+    QFile file("data.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
     beginResetModel();
@@ -104,7 +104,7 @@ void incomeList::loadFromFile(){
 }
 
 void incomeList::saveToFile() {
-    QFile file("C:/CODE/OSNOV/lab2/data.txt");
+    QFile file("data.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         return;
     }

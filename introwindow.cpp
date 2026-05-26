@@ -32,3 +32,9 @@ void introWindow::on_buttonAbout_clicked()
     aboutWin->show();
 }
 
+
+void introWindow::on_buttonExit_clicked()
+{
+
+}
+
